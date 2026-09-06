@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">اسکنر و فتوکپی هوشمند مدارک</string>
+    <string name="app_tagline">تبدیل فوری عکس به فتوکپی شارپ و اسکن اداری رسمی</string>
+
+    <!-- Home Screen -->
+    <string name="welcome_title">خوش آمدید به اسکنر مدارک</string>
+    <string name="welcome_desc">برای اسکن شفاف و حذف سایه‌ها، عکس مدرک را از دوربین گرفته یا از گالری انتخاب فرمایید.</string>
+    <string name="action_camera">عکاسی از مدرک با دوربین</string>
+    <string name="action_gallery">انتخاب سند از گالری</string>
+    <string name="recent_scans_title">سوابق اسکن‌های اخیر</string>
+    <string name="no_scans_message">هنوز مدرکی اسکن نشده است. اولین سند خود را اسکن کنید!</string>
+    <string name="delete_confirm_title">حذف سند</string>
+    <string name="delete_confirm_desc">آیا از حذف این سند اطمینان دارید؟ این عملیات قابل بازگشت نیست.</string>
+    <string name="cancel">انصراف</string>
+    <string name="delete">حذف</string>
+    <string name="share">اشتراک‌گذاری</string>
+    <string name="open_pdf">مشاهده PDF</string>
+
+    <!-- Editor Screen -->
+    <string name="editor_title">تنظیم کادر و زاویه مدرک</string>
+    <string name="rotate_left">چرخش ۹۰° چپ</string>
+    <string name="rotate_right">چرخش ۹۰° راست</string>
+    <string name="brightness_label">روشنایی و نور زمینه</string>
+    <string name="contrast_label">شفافیت و کنتراست خطوط</string>
+    <string name="reset_adjustments">تنظیم مجدد</string>
+    <string name="proceed_to_filters">مرحله بعد: انتخاب فیلتر فتوکپی</string>
+
+    <!-- Preview & Filters Screen -->
+    <string name="preview_title">پیش‌نمایش و اعمال فیلتر</string>
+    <string name="filter_photocopy">فتوکپی شارپ</string>
+    <string name="filter_photocopy_sub">حذف ۱۰۰٪ سایه و پس‌زمینه کدر، جوهر عمیق مشکی</string>
+    <string name="filter_color_scan">اسکن اداری رنگی</string>
+    <string name="filter_color_scan_sub">حفظ رنگ مهر و تمبر در کنار روشنایی یکدست کاغذ</string>
+    <string name="filter_bw_printer">سیاه و سفید پرینتر</string>
+    <string name="filter_bw_printer_sub">بهینه‌سازی خاکستری برای چاپ بدون هدررفت جوهر</string>
+    <string name="filter_original">تصویر اولیه</string>
+    <string name="filter_original_sub">تصویر خام ثبت‌شده</string>
+
+    <!-- Export Actions -->
+    <string name="save_to_gallery">ذخیره عکس در گالری با بالاترین کیفیت</string>
+    <string name="export_pdf">خروجی به صورت فایل PDF اداری</string>
+    <string name="share_messengers">ارسال مستقیم در پیام‌رسان‌ها (ایتا، بله، روبیکا، تلگرام، واتساپ)</string>
+
+    <!-- Status & Alerts -->
+    <string name="save_success">تصویر با موفقیت در گالری ذخیره شد</string>
+    <string name="pdf_success">فایل PDF اداری ایجاد شد</string>
+    <string name="processing">در حال پردازش سند...</string>
+    <string name="camera_permission_required">برای عکاسی از مدارک، اعطای مجوز دوربین الزامی است.</string>
+    <string name="grant_permission">اعطای مجوز</string>
+    <string name="document_name_prefix">مدرک_اسکن_شده_</string>
+</resources>

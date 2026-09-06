@@ -1,0 +1,10 @@
+{
+  "name": "اسکنر و فتوکپی هوشمند مدارک",
+  "description": "اپلیکیشن بومی اندروید با کاتلین و جت‌پک کامپوز برای اسکن مدارک، فیلتر فتوکپی و اسکن اداری، و خروجی PDF",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Professional Office & Document Scanner Palette -->
+    <color name="primary">#0D5257</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="primary_container">#20757C</color>
+    <color name="on_primary_container">#D3F5F7</color>
+
+    <color name="secondary">#3E6373</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="secondary_container">#C2E8FB</color>
+    <color name="on_secondary_container">#001F29</color>
+
+    <color name="accent_teal">#00897B</color>
+    <color name="accent_green">#2E7D32</color>
+
+    <!-- Neutral & Document Backgrounds -->
+    <color name="background_light">#F8FAF9</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="on_surface_light">#191C1D</color>
+    <color name="surface_variant_light">#E0E5E4</color>
+
+    <color name="background_dark">#101414</color>
+    <color name="surface_dark">#1B2021</color>
+    <color name="on_surface_dark">#E1E3E2</color>
+    <color name="surface_variant_dark">#3F4947</color>
+
+    <!-- Error & Delete -->
+    <color name="error">#BA1A1A</color>
+    <color name="on_error">#FFFFFF</color>
+</resources>
