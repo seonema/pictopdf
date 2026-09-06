@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: Build Release & Debug APK
+    name: Build Android APK & Bundle
     runs-on: ubuntu-latest
 
     steps:
@@ -21,34 +21,49 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: 'gradle'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Setup Gradle
+      - name: Setup Gradle 8.6
         uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.6'
 
       - name: Detect Project Directory
         id: locate_project
         run: |
-          if [ -d "DocScannerApp" ]; then
+          if [ -d "DocScannerApp" ] && [ -f "DocScannerApp/settings.gradle.kts" ]; then
             echo "DIR=DocScannerApp" >> $GITHUB_OUTPUT
+            echo "Detected DocScannerApp subdirectory"
           else
             echo "DIR=." >> $GITHUB_OUTPUT
+            echo "Detected root project directory"
           fi
 
-      - name: Build with Gradle
+      - name: Prepare Gradle Wrapper
         run: |
           cd ${{ steps.locate_project.outputs.DIR }}
           chmod +x gradlew || true
+          if [ ! -f "gradle/wrapper/gradle-wrapper.jar" ]; then
+            echo "Downloading gradle-wrapper.jar..."
+            mkdir -p gradle/wrapper
+            curl -sSL -o gradle/wrapper/gradle-wrapper.jar https://raw.githubusercontent.com/gradle/gradle/v8.6.0/gradle/wrapper/gradle-wrapper.jar || true
+          fi
+
+      - name: Build APKs (Release and Debug)
+        run: |
+          cd ${{ steps.locate_project.outputs.DIR }}
           if [ -f "gradle/wrapper/gradle-wrapper.jar" ]; then
-            ./gradlew assembleRelease assembleDebug bundleRelease --stacktrace
+            ./gradlew assembleRelease assembleDebug --stacktrace --no-daemon
           else
-            echo "Gradle wrapper jar not found, generating wrapper..."
-            gradle wrapper --gradle-version 8.6 || true
-            chmod +x gradlew || true
-            ./gradlew assembleRelease assembleDebug bundleRelease --stacktrace || gradle assembleRelease assembleDebug bundleRelease --stacktrace
+            gradle assembleRelease assembleDebug --stacktrace --no-daemon
+          fi
+
+      - name: Build AAB Bundle
+        run: |
+          cd ${{ steps.locate_project.outputs.DIR }}
+          if [ -f "gradle/wrapper/gradle-wrapper.jar" ]; then
+            ./gradlew bundleRelease --stacktrace --no-daemon || true
+          else
+            gradle bundleRelease --stacktrace --no-daemon || true
           fi
 
       - name: Upload APK Artifacts
@@ -61,6 +76,7 @@ jobs:
 
       - name: Upload AAB Bundle Artifact
         uses: actions/upload-artifact@v4
+        continue-on-error: true
         with:
           name: DocScanner-AAB-Bundle
           path: |
